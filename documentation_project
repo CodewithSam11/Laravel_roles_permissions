@@ -1,0 +1,29 @@
+// # we can solve this
+
+// this is for the checking ::: "Get-ExecutionPolicy"
+//if it is restricted we can apply the below command
+
+// npm : File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see
+// about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+// At line:1 char:1
+// + npm install
+// + ~~~
+//     + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+//     + FullyQualifiedErrorId : UnauthorizedAccess
+
+// Run this command ::: "Set-ExecutionPolicy -Scope CurrentUser RemoteSigned"
+
+// After work we can change(Restricted) it ::: "Set-ExecutionPolicy -Scope CurrentUser Restricted"
+
+
+/////////////////////// Permission Access ////////////////////////
+// "composer require spatie/laravel-permission"
+/// Publish the permission :: php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+// Run command php artisan optimize:clear
+// Run php artisan migrate , then three tables will be created = model_has_permissions, permissions, role_has_permissions
+
+/// this is used to import the role and permission
+// use Spatie\Permission\Models\Permission;
+// use Spatie\Permission\Models\Role;
+// i have to set up the user model for making the relation
+
